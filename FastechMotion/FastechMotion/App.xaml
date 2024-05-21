@@ -9,9 +9,12 @@
         <DataTemplate DataType="{x:Type vm:SingleMoveViewModel}">
             <v:SingleMoveView />
         </DataTemplate>
-        
+
         <DataTemplate DataType="{x:Type vm:JogMoveViewModel}">
             <v:JogMoveView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PositionStatusViewModel}">
+            <v:PositionStatus />
         </DataTemplate>
     </Application.Resources>
 </Application>
