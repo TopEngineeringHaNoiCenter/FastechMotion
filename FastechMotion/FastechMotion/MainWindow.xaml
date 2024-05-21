@@ -30,5 +30,20 @@
         <ContentControl Grid.Column="1"
                         Grid.Row="1"
                         Content="{Binding PositionStatusCurrentView}" />
+
+        <ContentControl Grid.Column="0"
+                        Grid.Row="2"
+                        Content="{Binding JogMoveViewModel}" />
+
+
+        <ContentControl Grid.Column="1"
+                        Grid.Row="2"
+                        Content="{Binding OriginViewModel}" />
+
+        <ContentControl Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="3"
+                        Content="{Binding FunctionViewModel}" />
     </Grid>
 </Window>
+

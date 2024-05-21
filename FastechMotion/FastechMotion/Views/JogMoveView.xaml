@@ -7,6 +7,9 @@
              mc:Ignorable="d"
              d:DesignHeight="200"
              d:DesignWidth="200">
+    <UserControl.Resources>
+
+    </UserControl.Resources>
     <Grid>
         <GroupBox Header="Jog Move">
             <Grid>
@@ -29,9 +32,11 @@
                        Grid.Row="1"
                        Content="Accel/Deccel" />
                 <TextBox Text=""
+                         Margin="2 5"
                          Grid.Column="1"
                          Grid.Row="0" />
                 <TextBox Text=""
+                         Margin="2 5"
                          Grid.Column="1"
                          Grid.Row="1" />
                 <Label Content="[pps]"
@@ -40,7 +45,33 @@
                 <Label Content="[msec]"
                        Grid.Column="2"
                        Grid.Row="1" />
+                <Grid Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="- Jog"
+                            Margin="5 10" />
+                    <Button Content="+ Jog"
+                            Margin="5 10"
+                            Grid.Column="1" />
+                </Grid>
 
+                <Grid Grid.Row="3"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="- Limit"
+                            Margin="5 10" />
+                    <Button Content="+ Limit"
+                            Margin="5 10"
+                            Grid.Column="1" />
+                </Grid>
             </Grid>
         </GroupBox>
     </Grid>
