@@ -6,12 +6,23 @@
              xmlns:local="clr-namespace:FastechMotion.Views"
              mc:Ignorable="d"
              d:DesignHeight="200"
-             d:DesignWidth="200">
+             d:DesignWidth="200"
+             Background="White">
 
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin"
                     Value="2" />
+            <Setter Property="Padding"
+                    Value="28 0 35 0" />
+            <Setter Property="Background"
+                    Value="White" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="FlowDirection"
+                    Value="RightToLeft" />
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -48,8 +59,33 @@
                              Rows="1"
                              HorizontalAlignment="Center">
                     <Button Content="DEC Move" />
-                    <Button Content="INC MOve" />
+                    <Button Content="INC Move" />
                 </UniformGrid>
+                <TextBox Grid.Column="1"
+                         Grid.Row="0" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="1" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="2" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="3" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="4" />
+                <Label Content="[pulse]"
+                       Grid.Row="0"
+                       Grid.Column="2" />
+                <Label Content="[pps]"
+                       Grid.Row="1"
+                       Grid.Column="2" />
+                <Label Content="[pps]"
+                       Grid.Row="2"
+                       Grid.Column="2" />
+                <Label Content="[msec]"
+                       Grid.Row="3"
+                       Grid.Column="2" />
+                <Label Content="[msec]"
+                       Grid.Row="4"
+                       Grid.Column="2" />
             </Grid>
         </GroupBox>
     </Grid>
