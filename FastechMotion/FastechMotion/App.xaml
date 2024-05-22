@@ -4,30 +4,33 @@
              xmlns:local="clr-namespace:FastechMotion"
              xmlns:vm="clr-namespace:FastechMotion.ViewModels"
              xmlns:v="clr-namespace:FastechMotion.Views"
+             xmlns:cvt="clr-namespace:FastechMotion.Converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type vm:SingleMoveViewModel}">
-            <v:SingleMoveView />
-        </DataTemplate>
+        <ResourceDictionary>
+            <cvt:BooleanToFillConverter x:Key="BooleanToFillConverter"/>
+            <DataTemplate DataType="{x:Type vm:SingleMoveViewModel}">
+                <v:SingleMoveView />
+            </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:JogMoveViewModel}">
-            <v:JogMoveView />
-        </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:JogMoveViewModel}">
+                <v:JogMoveView />
+            </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:PositionStatusViewModel}">
-            <v:PositionStatus />
-        </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PositionStatusViewModel}">
+                <v:PositionStatus />
+            </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:OriginViewModel}">
-            <v:OriginView />
-        </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:OriginViewModel}">
+                <v:OriginView />
+            </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:FunctionViewModel}">
-            <v:FunctionView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:AxisStatusViewModel}">
-            <v:Axis_Status />
-        </DataTemplate>
-
+            <DataTemplate DataType="{x:Type vm:FunctionViewModel}">
+                <v:FunctionView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AxisStatusViewModel}">
+                <v:Axis_Status />
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

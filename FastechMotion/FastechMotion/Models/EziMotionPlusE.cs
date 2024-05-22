@@ -49,7 +49,7 @@ namespace FastechMotion.Models
 			BoardID = ip.GetAddressBytes()[3];
 			UpdateStatusTimer = new DispatcherTimer();
 			UpdateStatusTimer.Tick += new EventHandler(UpdateStatus_Tick);
-			UpdateStatusTimer.Interval = TimeSpan.FromMilliseconds(100);
+			UpdateStatusTimer.Interval = TimeSpan.FromMilliseconds(1000);
 			UpdateStatusTimer.Start();
 
         }

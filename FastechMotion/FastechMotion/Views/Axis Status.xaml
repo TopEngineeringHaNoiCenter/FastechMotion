@@ -24,7 +24,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Ellipse Fill="Wheat"
+            <Ellipse Fill="{Binding Input1,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal">
-            <Ellipse Fill="Wheat"
+            <Ellipse Fill="{Binding Input2,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
