@@ -6,7 +6,24 @@
              xmlns:local="clr-namespace:FastechMotion.Views"
              mc:Ignorable="d"
              d:DesignHeight="200"
-             d:DesignWidth="200">
+             d:DesignWidth="200"
+             Background="White">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin"
+                    Value="2" />
+            <Setter Property="Padding"
+                    Value="28 0 35 0" />
+            <Setter Property="Background"
+                    Value="White" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="FlowDirection"
+                    Value="RightToLeft" />
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <GroupBox Header="Origin">
             <Grid>

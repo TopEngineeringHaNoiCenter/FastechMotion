@@ -8,7 +8,20 @@
              d:DesignHeight="200"
              d:DesignWidth="200">
     <UserControl.Resources>
-
+        <Style TargetType="Button">
+            <Setter Property="Margin"
+                    Value="2" />
+            <Setter Property="Background"
+                    Value="White" />
+            <Setter Property="Height"
+                    Value="36" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="FlowDirection"
+                    Value="RightToLeft" />
+        </Style>
     </UserControl.Resources>
     <Grid>
         <GroupBox Header="Jog Move">
@@ -16,8 +29,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*" />
                     <RowDefinition Height="0.5*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.7*" />
+                    <RowDefinition Height="0.7*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
