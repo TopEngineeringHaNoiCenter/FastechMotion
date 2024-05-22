@@ -12,11 +12,12 @@ namespace FastechMotion.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public ViewModelBase SingleMoveCurrentView { get; set; } 
-        public ViewModelBase PositionStatusCurrentView { get; set; } 
+        public ViewModelBase SingleMoveCurrentView { get; set; }
+        public ViewModelBase PositionStatusCurrentView { get; set; }
         public ViewModelBase JogMoveCurrentView { get; set; }
-        public ViewModelBase OriginCurrentView { get; set; } 
-        public ViewModelBase FunctioCurrentView { get; set; } 
+        public ViewModelBase OriginCurrentView { get; set; }
+        public ViewModelBase FunctioCurrentView { get; set; }
+        public ViewModelBase AxisStatusCurentView { get; set; }
 
         public EziMotionPlusE EziMotionDemo { get; set; }
 
@@ -30,7 +31,7 @@ namespace FastechMotion.ViewModels
         public int BoardId
         {
             get { return _boardId; }
-            set { _boardId = value; OnPropertyChanged(nameof(BoardId)); }   
+            set { _boardId = value; OnPropertyChanged(nameof(BoardId)); }
         }
         public ICommand ConnectCommand
         {
@@ -50,8 +51,8 @@ namespace FastechMotion.ViewModels
             JogMoveCurrentView = new JogMoveViewModel();
             OriginCurrentView = new OriginViewModel();
             FunctioCurrentView = new FunctionViewModel();
-
-            (OriginCurrentView as OriginViewModel).OriginEvent += (s,e)=>
+            AxisStatusCurentView = new AxisStatusViewModel();
+            (OriginCurrentView as OriginViewModel).OriginEvent += (s, e) =>
             {
                 EziMotionDemo.Origin();
             };
