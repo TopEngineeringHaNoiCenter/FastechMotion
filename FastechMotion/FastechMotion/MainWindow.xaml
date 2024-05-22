@@ -7,8 +7,8 @@
         xmlns:vm="clr-namespace:FastechMotion.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="650"
-        Width="800">
+        Height="750"
+        Width="1050">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:FastechMotion.Views"
              mc:Ignorable="d"
              d:DesignHeight="100"
-             Width="500"
+             Width="800"
              Background="White">
     <UserControl.Resources>
         <Style TargetType="Button">
@@ -16,13 +16,15 @@
                     Value="White" />
             <Setter Property="Height"
                     Value="30" />
+            <Setter Property="Padding"
+                    Value="15 0 15 0" />
         </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <GroupBox>
             <StackPanel Orientation="Horizontal">
@@ -44,7 +46,8 @@
             </StackPanel>
         </GroupBox>
         <Button Content="Close"
-                Margin="10"
-                Grid.Column="2" />
+                Margin="130 0 0 0"
+                Grid.Column="2"
+                HorizontalAlignment="Center" />
     </Grid>
 </UserControl>

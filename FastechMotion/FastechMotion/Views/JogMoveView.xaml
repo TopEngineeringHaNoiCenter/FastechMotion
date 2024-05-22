@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:FastechMotion.Views"
              mc:Ignorable="d"
              d:DesignHeight="200"
-             d:DesignWidth="200">
+             d:DesignWidth="200"
+             Background="White">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin"
