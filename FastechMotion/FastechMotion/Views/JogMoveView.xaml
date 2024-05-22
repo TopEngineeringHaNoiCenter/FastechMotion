@@ -23,6 +23,10 @@
             <Setter Property="FlowDirection"
                     Value="RightToLeft" />
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+        </Style>
     </UserControl.Resources>
     <Grid>
         <GroupBox Header="Jog Move">

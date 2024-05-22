@@ -56,6 +56,15 @@ namespace FastechMotion.Models
             EziMOTIONPlusELib.FAS_Close(BoardID);
         }
 
+		public void ServoOn()
+		{
+            EziMOTIONPlusELib.FAS_ServoEnable(BoardID,1);
+        }
+		public void Origin()
+		{
+            EziMOTIONPlusELib.FAS_MoveOriginSingleAxis(BoardID);
+
+        }
 		public void MoveAbs(int absPos,uint velocity)
 		{
 			EziMOTIONPlusELib.FAS_MoveSingleAxisAbsPos(BoardID, absPos, velocity);
