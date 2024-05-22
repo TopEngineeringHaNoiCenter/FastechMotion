@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace FastechMotion.Models
 {
     public class EziMotionPlusE : ViewModelBase
     {
+        DispatcherTimer UpdateStatusTimer;
 		private string _name;
         private string _strIp;
 
@@ -45,7 +47,12 @@ namespace FastechMotion.Models
 			StrIP = strIP;
 			IPAddress ip = IPAddress.Parse(strIP);
 			BoardID = ip.GetAddressBytes()[3];
-		}
+			UpdateStatusTimer = new DispatcherTimer();
+			UpdateStatusTimer.Tick += new EventHandler(UpdateStatus_Tick);
+			UpdateStatusTimer.Interval = TimeSpan.FromMilliseconds(100);
+			UpdateStatusTimer.Start();
+
+        }
 
 		public void Connect()
 		{
@@ -69,5 +76,9 @@ namespace FastechMotion.Models
 		{
 			EziMOTIONPlusELib.FAS_MoveSingleAxisAbsPos(BoardID, absPos, velocity);
         }
+		private void UpdateStatus_Tick(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
