@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace FastechMotion.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        DispatcherTimer TimerDemo;
+
+        public EventHandler UpdateAxisStatusEvent;
         public ViewModelBase SingleMoveCurrentView { get; set; }
         public ViewModelBase PositionStatusCurrentView { get; set; }
         public ViewModelBase JogMoveCurrentView { get; set; }
@@ -46,6 +50,7 @@ namespace FastechMotion.ViewModels
         }
         public MainViewModel()
         {
+
             SingleMoveCurrentView = new SingleMoveViewModel();
             PositionStatusCurrentView = new PositionStatusViewModel();
             JogMoveCurrentView = new JogMoveViewModel();
@@ -60,6 +65,18 @@ namespace FastechMotion.ViewModels
             {
                 EziMotionDemo.ServoOn();
             };
+            UpdateAxisStatusEvent += (AxisStatusCurentView as AxisStatusViewModel).UpdateAxisStatusEventHandler;
+
+            TimerDemo = new DispatcherTimer();
+            TimerDemo.Tick += new EventHandler(TimerDemo_Tick);
+            TimerDemo.Interval = TimeSpan.FromMilliseconds(100);
+            TimerDemo.Start();
         }
+
+        private void TimerDemo_Tick(object sender, EventArgs e)
+        {
+            UpdateAxisStatusEvent?.Invoke(this, EventArgs.Empty);
+        }
+
     }
 }

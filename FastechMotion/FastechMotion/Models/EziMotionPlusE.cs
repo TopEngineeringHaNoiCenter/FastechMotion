@@ -15,8 +15,21 @@ namespace FastechMotion.Models
         DispatcherTimer UpdateStatusTimer;
 		private string _name;
         private string _strIp;
+		private uint _axisStatus;
 
-        public string Name
+        public uint AxisStatus
+		{
+			get 
+			{
+				return _axisStatus; 
+			}
+			set 
+			{
+				_axisStatus = value;
+				OnPropertyChanged(nameof(AxisStatus));
+			}
+		}
+		public string Name
 		{
 			get 
 			{
@@ -41,7 +54,12 @@ namespace FastechMotion.Models
 			}
 		}
 		public int BoardID { get; set; } = 8;
-		public EziMotionPlusE(string name,string strIP) 
+
+		public bool IsErrorAll => (AxisStatus & 0X00000001) == 0X00000001;
+		public bool IsHWPositiveLimit => (AxisStatus & 0X00000002) == 0X00000002;
+		public bool IsHWNegativeLimit => (AxisStatus & 0X00000004) == 0X00000004;
+
+        public EziMotionPlusE(string name,string strIP) 
 		{
 			Name = name;
 			StrIP = strIP;
@@ -51,7 +69,6 @@ namespace FastechMotion.Models
 			UpdateStatusTimer.Tick += new EventHandler(UpdateStatus_Tick);
 			UpdateStatusTimer.Interval = TimeSpan.FromMilliseconds(1000);
 			UpdateStatusTimer.Start();
-
         }
 
 		public void Connect()
@@ -76,9 +93,18 @@ namespace FastechMotion.Models
 		{
 			EziMOTIONPlusELib.FAS_MoveSingleAxisAbsPos(BoardID, absPos, velocity);
         }
+		public void UpdateAxisStatus()
+		{
+			uint axisStatus = 0;
+			EziMOTIONPlusELib.FAS_GetAxisStatus(BoardID, ref axisStatus);
+			AxisStatus = axisStatus;
+			OnPropertyChanged(nameof(IsErrorAll));
+			OnPropertyChanged(nameof(IsHWPositiveLimit));
+			OnPropertyChanged(nameof(IsHWNegativeLimit));
+		}
 		private void UpdateStatus_Tick(object sender, EventArgs e)
 		{
-
-		}
+			UpdateAxisStatus();
+        }
 	}
 }

@@ -24,7 +24,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Ellipse Fill="{Binding Input1,Converter={StaticResource BooleanToFillConverter}}"
+            <Ellipse Fill="{Binding IsErrorAll,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal">
-            <Ellipse Fill="{Binding Input2,Converter={StaticResource BooleanToFillConverter}}"
+            <Ellipse Fill="{Binding IsHWPositiveLimit,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
@@ -44,7 +44,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal">
-            <Ellipse Fill="Wheat"
+            <Ellipse Fill="{Binding IsHWNegativeLimit,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
@@ -54,7 +54,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3"
                     Orientation="Horizontal">
-            <Ellipse Fill="Wheat"
+            <Ellipse Fill="{Binding Input1,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
@@ -64,7 +64,7 @@
         </StackPanel>
         <StackPanel Grid.Row="4"
                     Orientation="Horizontal">
-            <Ellipse Fill="Wheat"
+            <Ellipse Fill="{Binding Input2,Converter={StaticResource BooleanToFillConverter}}"
                      Width="20"
                      Height="20"
                      StrokeThickness="1" />
