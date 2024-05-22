@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastechMotion.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,11 @@ namespace FastechMotion.ViewModels
         public ViewModelBase JogMoveViewModel { get; set; } = new JogMoveViewModel();
         public ViewModelBase OriginViewModel { get; set; } = new OriginViewModel();
         public ViewModelBase FunctionViewModel { get; set; } = new FunctionViewModel();
+
+        public EziMotionPlusE EziMotionDemo { get; set; }
+        public MainViewModel() 
+        {
+            EziMotionDemo = new EziMotionPlusE("Demo", "192.168.0.8");
+        }
     }
 }
