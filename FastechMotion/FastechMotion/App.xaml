@@ -17,13 +17,16 @@
         <DataTemplate DataType="{x:Type vm:PositionStatusViewModel}">
             <v:PositionStatus />
         </DataTemplate>
-        
+
         <DataTemplate DataType="{x:Type vm:OriginViewModel}">
             <v:OriginView />
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type vm:FunctionViewModel}">
             <v:FunctionView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AxisStatusViewModel}">
+            <v:Axis_Status />
         </DataTemplate>
 
     </Application.Resources>

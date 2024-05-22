@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="FastechMotion.Views.Axis_Status"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FastechMotion.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="300"
+             Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Ellipse Fill="Wheat"
+                     Width="20"
+                     Height="20"
+                     StrokeThickness="1" />
+            <TextBlock Text="Error All"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+            <Ellipse Fill="Wheat"
+                     Width="20"
+                     Height="20"
+                     StrokeThickness="1" />
+            <TextBlock Text="H/W +Limit"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal">
+            <Ellipse Fill="Wheat"
+                     Width="20"
+                     Height="20"
+                     StrokeThickness="1" />
+            <TextBlock Text="H/W -Limit"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal">
+            <Ellipse Fill="Wheat"
+                     Width="20"
+                     Height="20"
+                     StrokeThickness="1" />
+            <TextBlock Text="S/W +Limit"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="4"
+                    Orientation="Horizontal">
+            <Ellipse Fill="Wheat"
+                     Width="20"
+                     Height="20"
+                     StrokeThickness="1" />
+            <TextBlock Text="S/W -Limit"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>
