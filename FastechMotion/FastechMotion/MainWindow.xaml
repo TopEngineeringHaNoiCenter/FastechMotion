@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FastechMotion"
         xmlns:vm="clr-namespace:FastechMotion.ViewModels"
+        xmlns:cv="clr-namespace:FastechMotion.Converters"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="650"
@@ -13,6 +14,9 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <cv:BoolToBrushConverter x:Key="BoolToBrushConverter"></cv:BoolToBrushConverter>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -30,23 +34,24 @@
                     Orientation="Horizontal">
             <Label Content="IP: "
                    VerticalAlignment="Center"
-                   FontSize="20"/>
+                   FontSize="20" />
             <TextBox Width="150"
                      Height="50"
                      IsReadOnly="True"
-                     Text="{Binding StrIP}"
+                     Text="{Binding StrIP.Address}"
                      VerticalContentAlignment="Center"
                      FontSize="20" />
             <Button Content="Connect"
                     Height="50"
                     Width="50"
                     Margin="10 0"
-                    Command="{Binding ConnectCommand}"/>
+                    Command="{Binding ConnectCommand}"
+                    Background="{Binding IsConnect, Converter={StaticResource BoolToBrushConverter}}" />
         </StackPanel>
         <ContentControl Grid.Column="0"
                         Grid.Row="1"
                         Content="{Binding SingleMoveCurrentView}" />
-        
+
         <ContentControl Grid.Column="1"
                         Grid.Row="1"
                         Content="{Binding PositionStatusCurrentView}" />

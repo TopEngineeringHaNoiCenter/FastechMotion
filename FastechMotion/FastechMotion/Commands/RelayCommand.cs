@@ -25,7 +25,7 @@ namespace FastechMotion.Commands
             }
         }
 
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public RelayCommand(Func<object, bool> canExecute = null, Action<object> execute)
         {
             _execute = execute;
             _canExecute = canExecute;

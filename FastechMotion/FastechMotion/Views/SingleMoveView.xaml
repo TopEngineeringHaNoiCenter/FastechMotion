@@ -66,15 +66,20 @@
                     <Button Content="INC Move" />
                 </UniformGrid>
                 <TextBox Grid.Column="1"
-                         Grid.Row="0" />
+                         Grid.Row="0"
+                         Text="{Binding CmdPos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBox Grid.Column="1"
-                         Grid.Row="1" />
+                         Grid.Row="1"
+                         Text="{Binding StartSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox Grid.Column="1"
-                         Grid.Row="2" />
+                         Grid.Row="2"
+                         Text="{Binding MoveSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox Grid.Column="1"
-                         Grid.Row="3" />
+                         Grid.Row="3"
+                         Text="{Binding AccelTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox Grid.Column="1"
-                         Grid.Row="4" />
+                         Grid.Row="4"
+                         Text="{Binding DeccelTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="[pulse]"
                        Grid.Row="0"
                        Grid.Column="2" />
