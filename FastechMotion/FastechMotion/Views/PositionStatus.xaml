@@ -25,6 +25,10 @@
             <Setter Property="Background"
                     Value="#d7ee9e" />
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+        </Style>
     </UserControl.Resources>
     <Grid>
         <GroupBox Header="Position Status">

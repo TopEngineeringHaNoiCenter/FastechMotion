@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Height="650"
-        Width="800">
+        Width="800"
+        WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
@@ -24,26 +25,45 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0"
+                    Grid.Column="2"
+                    Orientation="Horizontal">
+            <Label Content="IP: "
+                   VerticalAlignment="Center"
+                   FontSize="20"/>
+            <TextBox Width="150"
+                     Height="50"
+                     IsReadOnly="True"
+                     Text="{Binding StrIP}"
+                     VerticalContentAlignment="Center"
+                     FontSize="20" />
+            <Button Content="Connect"
+                    Height="50"
+                    Width="50"
+                    Margin="10 0"
+                    Command="{Binding ConnectCommand}"/>
+        </StackPanel>
         <ContentControl Grid.Column="0"
                         Grid.Row="1"
                         Content="{Binding SingleMoveCurrentView}" />
+        
         <ContentControl Grid.Column="1"
                         Grid.Row="1"
                         Content="{Binding PositionStatusCurrentView}" />
 
         <ContentControl Grid.Column="0"
                         Grid.Row="2"
-                        Content="{Binding JogMoveViewModel}" />
+                        Content="{Binding JogMoveCurrentView}" />
 
 
         <ContentControl Grid.Column="1"
                         Grid.Row="2"
-                        Content="{Binding OriginViewModel}" />
+                        Content="{Binding OriginCurrentView}" />
 
         <ContentControl Grid.Column="0"
                         Grid.ColumnSpan="3"
                         Grid.Row="3"
-                        Content="{Binding FunctionViewModel}" />
+                        Content="{Binding FunctioCurrentView}" />
     </Grid>
 </Window>
 
